@@ -1,0 +1,10 @@
+Tento repozitar obsahuje privatni konfiguraci i s pluginy pro textovy
+nastroj Vim.
+Autor: Lukas Hutak
+
+Navod na zprovozneni:
+Repozitar musi pradstavovat slozku 
+   ~/.vim
+Obsah souboru ~/.vimrc je nutne nahradit za pouhy jeden radek:
+   runtime vimrc
+
