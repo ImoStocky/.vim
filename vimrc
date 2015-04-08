@@ -15,6 +15,12 @@ set visualbell t_vb=
 "  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 "endif
 
+" OTESTOVAT
+" Aktivace barevneho rezimu
+"if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gnome-terminal"
+"  set t_Co=256
+"endif
+
 " Oznaceni aktivniho radku a jeho barvy
 set cursorline
 hi CursorLine cterm=NONE ctermbg=236
@@ -25,27 +31,54 @@ highlight LineNr ctermfg=238
 " Zmena obarveni oznaceneho textu
 hi Search cterm=NONE ctermfg=black ctermbg=221
 
+" Zmena barev pro dialogové menu (Ctrl+P apod.)
+highlight Pmenu ctermbg=238
+highlight PmenuSel ctermbg=70
+
 " Automaticke zarovnavani
 set autoindent
+set copyindent
+filetype on
+filetype indent on
 
 " Expanze tabulatoru na mezery
 set expandtab
 set smarttab
-set copyindent
-filetype on
-filetype indent on
 
 " Velikost tabulatoru a mezer
 set tabstop=4
 set shiftwidth=3
 set softtabstop=3
 
-" Zobrazeni spodniho menu
+" Zobrazeni rozsireneho spodniho menu
 set wildmenu
 set wildmode=list:longest,full
 
+" Pred/za kurzorem bude alespon tolik radku, aby nebyl u horni nebo dolni
+" hranice editoru
+set scrolloff=3
+
+" Automaticke znovunacteni souboru, pokud byl zvenku modifikovan
+set autoread
+
 " Podpora mysi v editoru
 "set mouse=a
+
+" Zobrazeni bilych znaku na konci radku
+set list
+set listchars=tab:>-,trail:.,extends:#,nbsp:.
+
+" Historie zadanych prikazu
+set history=100
+" Historie poctu vraceni uprav zpet (UNDO)
+set undolevels=100
+
+" Nastaveni vyhledavani v textu
+set incsearch   " vyhledani textu jiz pri jeho psani
+set ignorecase  " vyhledani bez rozlisovani velikosti pismen
+set smartcase   " aktivace case-sensitive v pripade ze dotaz ma velke pismeno
+
+
 
 " Mapovani klaves pro prepinani zalozek
 nnoremap <C-S-Right> :tabn<CR>
