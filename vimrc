@@ -65,7 +65,7 @@ set autoread
 "set mouse=a
 
 " Zobrazeni bilych znaku na konci radku
-set list
+"set list
 set listchars=tab:>-,trail:.,extends:#,nbsp:.
 
 " Historie zadanych prikazu
