@@ -40,15 +40,7 @@ set autoindent
 set copyindent
 filetype on
 filetype indent on
-
-" Expanze tabulatoru na mezery
-set expandtab
 set smarttab
-
-" Velikost tabulatoru a mezer
-set tabstop=4
-set shiftwidth=3
-set softtabstop=3
 
 " Zobrazeni rozsireneho spodniho menu
 set wildmenu
@@ -56,7 +48,7 @@ set wildmode=list:longest,full
 
 " Pred/za kurzorem bude alespon tolik radku, aby nebyl u horni nebo dolni
 " hranice editoru
-set scrolloff=3
+set scrolloff=5
 
 " Automaticke znovunacteni souboru, pokud byl zvenku modifikovan
 set autoread
@@ -97,6 +89,25 @@ nnoremap <S-Up> :m-2<CR>
 nnoremap <S-Down> :m+<CR>
 inoremap <S-Up> <Esc>:m-2<CR>
 inoremap <S-Down> <Esc>:m+<CR>
+
+" Vlastni funkce
+" CodeStyleDefault
+function CodeStyleDefault()
+	set tabstop=4
+	set noexpandtab
+	set shiftwidth=4
+	set softtabstop=4
+endfunction
+
+function CodeStyleNemea()
+	set tabstop=3
+	set shiftwidth=3
+	set softtabstop=3
+	set expandtab
+endfunction
+
+" Aktivuj vychozi Code Style
+call CodeStyleDefault()
 
 "------------------------------------------------------------------------------
 " PHP
